@@ -28,7 +28,7 @@
     │   ├── __init__.py
     │   ├── utils/
     │   │   ├── __init__.py
-    │   │   └── file_utils.py  # Contains load_prompt function
+    │   │   └── utils.py  # Contains load_prompt function
     │   └── v1/
     │       ├── __init__.py
     │       └── modules/
@@ -38,7 +38,7 @@
     ├── prompts/
     │   └── check_valid_keyword.liquid  # Template for validation prompt
     └── steps/
-        └── validate_keywords_llama2.py  # Main script to validate keywords
+        └── validate_keywords.py  # Main script to validate keywords
 ```
 
 ---
@@ -67,6 +67,15 @@ To set up the environment and download the LLaMA 2 model:
 ./setup.sh
 ```
 
+### Set Executable Permissions
+
+Before running the setup and CLI commands, make sure the bash scripts (`setup.sh` and `acg`) are executable:
+
+```bash
+chmod +x setup.sh
+chmod +x acg
+```
+
 ✅ This will:
 - Create and activate a virtual environment (`acg_env`).
 - Install the required packages from `requirements.txt`.
@@ -84,7 +93,7 @@ acg validate
 ```
 
 ✅ This will:
-- Run the `validate_keywords_llama2.py` script.
+- Run the `validate_keywords.py` script.
 - Check if extracted keywords have factual relevance.
 
 ---
@@ -239,7 +248,7 @@ This project is licensed under the MIT License.
 ## 📧 Contact
 
 For support or inquiries, contact:
-- **Email:** farhanrahman02@example.com
+- **Email:** rahaviselvarajan3098@gmail.com,farhanrahman02@example.com
 - **GitHub:** [Your GitHub Profile](https://github.com/yourprofile)
 
 ---
