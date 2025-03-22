@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Define the path to the virtual environment and Python script
+ENV_NAME="acg_env"
+SCRIPT_PATH="src/steps/validate_keywords.py"
+
+# Activate the virtual environment
+if [ -d "./$ENV_NAME" ]; then
+    source ./$ENV_NAME/bin/activate
+else
+    echo "❌ Virtual environment not found. Run ./setup.sh first."
+    exit 1
+fi
+
+# Define available commands
+case "$1" in
+    validate)
+        echo "🔎 Running keyword validation..."
+        python $SCRIPT_PATH
+        ;;
+    reset)
+        echo "🔄 Resetting and setting up again..."
+        ./setup.sh --reset
+        ;;
+    *)
+        echo "❌ Invalid command. Usage: acg [validate|reset]"
+        exit 1
+        ;;
+esac
